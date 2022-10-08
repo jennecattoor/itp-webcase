@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from './Index.module.css'
 import Recipe from '../components/recipe'
 
 export default function Home({ recipes }) {
