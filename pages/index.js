@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Recipe from '../components/recipe'
 
 export default function Home() {
   return (
@@ -11,9 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>
-          Hello In The Pocket
-        </h1>
+        <div className={styles.intro}>
+          <h1>Jenne’s favourite desserts</h1>
+          <p>When you've eaten all your vegetables 🥕, it's likely you're craving something sweet. I've got you covered! Here are the recipes for all my favourite desserts. Eating these desserts without having eaten vegetables is totally fine, I do it too.</p>
+        </div>
+        <Recipe recipe="test" />
       </main>
 
     </div>
