@@ -6,9 +6,13 @@ export default function Recipe({ recipe }) {
     return (
         <Link href={`/detail/${encodeURIComponent(recipe.slug)}`}>
             <div className={styles.recipe}>
-                <h2 className={styles.name}>{recipe.name}</h2>
-                <p className={styles.description}>{recipe.description}</p>
-                <Image src={recipe.image.url} alt={recipe.name} width="100px" height="100px" />
+                <div className={styles.text}>
+                    <h2 className={styles.name}>{recipe.name}</h2>
+                    <p className={styles.description}>{recipe.description}</p>
+                </div>
+                <div className={styles.imageWrapper}>
+                    <Image src={recipe.image.url} alt={recipe.name} className={styles.image} layout="fill" objectFit="cover" />
+                </div>
             </div>
         </Link>
     )
