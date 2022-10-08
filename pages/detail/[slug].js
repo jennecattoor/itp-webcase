@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 
@@ -7,6 +8,10 @@ export default function Recipe({ recipe }) {
     const { slug } = router.query
     return (
         <div>
+            <Head>
+                <title>Favourite Desserts</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <main>
                 <h2>{recipe.name}</h2>
                 <p>{recipe.description}</p>
@@ -14,7 +19,7 @@ export default function Recipe({ recipe }) {
                 <p>{recipe.ingredients}</p>
                 <p>{recipe.instructions}</p>
                 <p>{recipe.difficulty}</p>
-                <button><Link href={`/`}>Go back to home page</Link></button>
+                <button><Link href={`/`}>Go back</Link></button>
             </main>
         </div>
     )

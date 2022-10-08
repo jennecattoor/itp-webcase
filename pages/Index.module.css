@@ -10,3 +10,11 @@
 .intro {
   max-width: 40rem;
 }
+
+.intro span {
+  color: var(--color-green);
+}
+
+.introText {
+  font-size: 1.2rem;
+}
