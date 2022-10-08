@@ -1,5 +1,6 @@
 .recipe {
+  padding: 2rem;
+  margin: 2rem 0;
   max-width: 40rem;
   background-color: var(--color-lightgray);
-  padding: 2rem;
 }

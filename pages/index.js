@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Recipe from '../components/recipe'
 
-export default function Home() {
+export default function Home({ recipes }) {
   return (
     <div>
       <Head>
@@ -17,9 +17,44 @@ export default function Home() {
           <h1>Jenne’s favourite desserts</h1>
           <p>When you've eaten all your vegetables 🥕, it's likely you're craving something sweet. I've got you covered! Here are the recipes for all my favourite desserts. Eating these desserts without having eaten vegetables is totally fine, I do it too.</p>
         </div>
-        <Recipe recipe="test" />
+        {recipes.map(recipe => <Recipe recipe={recipe} key={recipe.slug} />)}
       </main>
-
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/?access_token=${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
+    {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: `
+          {
+              recipeCollection {
+              items {
+                name
+                description
+                image {
+                  url
+                }
+                time
+                slug
+              }
+            }
+          }
+  				`,
+      }),
+    },
+  )
+
+  const recipes = await res.json()
+  return {
+    props: {
+      recipes: recipes.data.recipeCollection.items,
+    },
+  }
 }
