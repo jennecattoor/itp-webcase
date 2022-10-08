@@ -14,15 +14,7 @@ body {
   --color-black: #020202;
   --color-lightgray: #F8FAFB;
   --color-white: white;
-}
-
-button {
-  background-color: var(--color-green);
-  color: var(--color-white);
-  border: none;
-  border-radius: 5px;
-  padding: 1rem;
-  font-size: 1.1rem;
+  --margin-mobile: .8rem;
 }
 
 a {

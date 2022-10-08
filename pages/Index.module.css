@@ -1,20 +1,31 @@
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem var(--margin-mobile);
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.intro {
-  max-width: 40rem;
+.title {
+  line-height: 120%;
 }
 
-.intro span {
+.title span {
   color: var(--color-green);
 }
 
-.introText {
+.description {
   font-size: 1.2rem;
 }
+
+@media only screen and (min-width: 768px) {
+  .main {
+      padding: 4rem 0;
+    }
+  
+    .intro {
+      max-width: 40rem;
+    }
+}
+
+/* @media only screen and (min-width: 1024px) {} */

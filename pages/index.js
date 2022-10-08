@@ -12,8 +12,8 @@ export default function Home({ recipes }) {
       </Head>
       <main className={styles.main}>
         <div className={styles.intro}>
-          <h1>Jenne’s <span>favourite desserts</span></h1>
-          <p className={styles.introText}>When you've eaten all your vegetables 🥕, it's likely you're craving something sweet. I've got you covered! Here are the recipes for all my favourite desserts. Eating these desserts without having eaten vegetables is totally fine, I do it too.</p>
+          <h1 className={styles.title}>Jenne’s <span>favourite desserts</span></h1>
+          <p className={styles.description}>When you've eaten all your vegetables 🥕, it's likely you're craving something sweet. I've got you covered! Here are the recipes for all my favourite desserts. Eating these desserts without having eaten vegetables is totally fine, I do it too.</p>
         </div>
         {recipes.map(recipe => <Recipe recipe={recipe} key={recipe.slug} />)}
       </main>
@@ -39,7 +39,6 @@ export async function getStaticProps() {
                 image {
                   url
                 }
-                time
                 slug
               }
             }

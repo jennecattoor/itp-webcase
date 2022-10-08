@@ -3,4 +3,6 @@
   margin: 2rem 0;
   max-width: 40rem;
   background-color: var(--color-lightgray);
+  border-radius: 10px;
+  cursor: pointer;
 }

@@ -1,3 +1,4 @@
+import styles from './Slug.module.css'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
@@ -19,7 +20,7 @@ export default function Recipe({ recipe }) {
                 <p>{recipe.ingredients}</p>
                 <p>{recipe.instructions}</p>
                 <p>{recipe.difficulty}</p>
-                <button><Link href={`/`}>Go back</Link></button>
+                <button className={styles.button}><Link href={`/`}>Go back</Link></button>
             </main>
         </div>
     )
