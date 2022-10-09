@@ -1,25 +1,34 @@
-import styles from './Slug.module.css'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import styles from './Slug.module.css';
+import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export default function Recipe({ recipe }) {
-    const router = useRouter()
-    const { slug } = router.query
+    console.log(recipe)
     return (
         <div>
             <Head>
                 <title>Favourite Desserts</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
+            <main className={styles.main}>
                 <h2>{recipe.name}</h2>
-                <p>{recipe.description}</p>
-                <p>{recipe.time}</p>
-                <p>{recipe.ingredients}</p>
-                <p>{recipe.instructions}</p>
-                <p>{recipe.difficulty}</p>
+                <p className={styles.description}>{recipe.description}</p>
+                <div className={styles.imageWrapper}>
+                    <Image src={recipe.image.url} alt={recipe.name} className={styles.image} layout="fill" objectFit="cover" />
+                </div>
+                <h3>Information</h3>
+                <p>Cooking Time: {recipe.time}min</p>
+                <p>Difficulty: {recipe.difficulty}/10</p>
+                <hr className={styles.line} />
+                <h3>Ingredients</h3>
+                <ul>
+                    {recipe.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+                </ul>
+                <hr className={styles.line} />
+                <h3>Instructions</h3>
+                <p className={styles.instructions}>{recipe.instructions}</p>
                 <button className={styles.button}><Link href={`/`}>Go back</Link></button>
             </main>
         </div>
