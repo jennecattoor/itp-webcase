@@ -7,9 +7,9 @@
 
 ## Programs
 
-- Contentful: Easy to use and one of the more popular to use headless CMS systems. I didn't have any experience using Contentful but it was very straightforward.
-- Next.js: Very good React-based workflow. I haven't used Next.js before so I had to read the docs to learn about the serverside rendering.
-- GraphQl: I had little experience with using GraphQL in a personal project. Easy to learn and get the data you need with GraphiQl.
+- Contentful: Easy to use and one of the more popular headless CMS systems. I didn't have any experience using Contentful but it was very straightforward.
+- Next.js: React-based workflow. Very positive experience, I haven't used Next.js before so I had to read the docs to learn about the serverside rendering.
+- GraphQl: I had little experience with using GraphQL in a personal project. Easy to get the data you need with GraphiQL
 - Vercel: Straightforward to use for this project as Next.js is from the creator of Next.js.
 
 ## Experience
