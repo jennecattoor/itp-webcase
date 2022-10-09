@@ -1,6 +1,7 @@
 .main {
   padding: 1rem var(--margin-mobile);
   max-width: 45rem;
+  margin: 0 auto;
 }
 
 .description {
@@ -36,5 +37,11 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .main {
+    padding: 4rem var(--margin-mobile);
+  }
 
+  .imageWrapper {
+    height: 15rem;
+  }
 }
