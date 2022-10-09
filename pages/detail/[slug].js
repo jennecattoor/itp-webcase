@@ -9,7 +9,7 @@ export default function Recipe({ recipe }) {
     return (
         <div>
             <Head>
-                <title>Favourite Desserts</title>
+                <title>{recipe.name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>

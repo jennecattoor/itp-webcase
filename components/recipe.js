@@ -1,4 +1,4 @@
-import styles from './recipe.module.css';
+import styles from './Recipe.module.css';
 import Link from 'next/link';
 import Image from 'next/image'
 
